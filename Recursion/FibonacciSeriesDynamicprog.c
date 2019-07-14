@@ -9,7 +9,7 @@ Github:			 kevin909cty
 Date:   		 14 / 07 / 2019
 Comment: 		 Please feel free to contact me if there are any mistake or code that 
 			 can be further improve. Thank you very much! ^_^ 
-Contact email: 	 	cheungkevinviola909@gmail.com
+Contact email: 	 	 cheungkevinviola909@gmail.com
 p.s.:			 This code only works where "term <= 46". Beyond 46 will return a wrong value.
 ======================================================================================================================
 */
