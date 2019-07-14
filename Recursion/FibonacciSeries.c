@@ -5,7 +5,8 @@ Compiler: 		 GCC, GNU Compiler Collection, "gcc -o compilefile FibonacciSeries.c
 Author: 		 Cheung Tsz Yin
 Github:			 kevin909cty
 Date:   		 14 / 07 / 2019
-Comment: 		 Please feel free to contact me if there are any mistake or code that 				   can be further improve. Thank you very much! ^_^ 
+Comment: 		 Please feel free to contact me if there are any mistake or code that 
+				 can be further improve. Thank you very much! ^_^ 
 Contact email: 	 cheungkevinviola909@gmail.com
 ======================================================================================
 */
