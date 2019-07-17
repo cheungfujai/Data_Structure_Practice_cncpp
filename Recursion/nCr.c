@@ -4,7 +4,7 @@ About_this_code: 	My self-exercise to implement the nCr (Pascal Triangle) series
 Compiler: 		 GCC, GNU Compiler Collection, "gcc -o compilefile nCr.c"
 Author: 		 Cheung Tsz Yin
 Github:			 kevin909cty
-Date:   		 14 / 07 / 2019
+Date:   		 18 / 07 / 2019
 Comment: 		 Please feel free to contact me if there are any mistake or code that 
 			 can be further improve. Thank you very much! ^_^ 
 Contact email: 	 	 cheungkevinviola909@gmail.com
