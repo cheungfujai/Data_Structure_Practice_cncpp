@@ -43,7 +43,7 @@ int ncr(int n, int r, int*** ptr){
 	}
 	else{
 		if((*ptr)[n][r] == -1){
-			(*ptr)[n][r] = ncr(n - 1, r - 1, *(&ptr)) + ncr(n - 1, r, *(&ptr));
+			(*ptr)[n][r] = ncr(n - 1, r - 1, &(**ptr)) + ncr(n - 1, r, &(**ptr));
 		}
 		else{
 			return (*ptr)[n][r];
