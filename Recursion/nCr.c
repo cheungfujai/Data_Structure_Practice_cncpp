@@ -23,25 +23,30 @@ int main(){
 	int** ptr = malloc(n * sizeof(int));
 	for (int i = 0; i < n; i++){
 		ptr[i] = malloc((i + 1) * sizeof(int));
-	}
-	printf("The value of '%d' C '%d' = %d.\n", n, r, ncr(n, r, ptr));
-}
-
-int ncr(int n, int r, int** ptr){
-	ptr[n][r] = 0;
-	printf("testfunc %d\n", ptr[n][r]);
-	for (int i = 0; i < n; i++){
-		for (int j = 0; j < i+1; j++){
-			if (i == j || j == 0){
-				ptr[i][j] = 1;
-			}
-			else if (j == 1 || j == i - 1){
-				ptr[i][j] == i;
-			}
-			else{
-				ptr[i][j] = ptr [i - 1][j - 1] + sptr[i - 1][j];
-			}
+		for (int j = 0; j < i + 1; j++){
+			ptr[i][j] = -1;
 		}
 	}
-	return *ptr[n][r];
+	printf("The value of '%d' C '%d' = %d.\n", n, r, ncr(n, r, &ptr));
+	free(ptr);
+}
+
+int ncr(int n, int r, int*** ptr){
+	printf("Bud here with value &d\n", (*ptr)[n][r]);
+	if (n == r || r == 0){
+		(*ptr)[n][r] = 1;
+		return 1;
+	}
+	else if (r == 1 || r == n - 1){
+		(*ptr)[n][r] == n;
+		return n;
+	}
+	else{
+		if((*ptr)[n][r] == -1){
+			(*ptr)[n][r] = ncr(n - 1, r - 1, *(&ptr)) + ncr(n - 1, r, *(&ptr));
+		}
+		else{
+			return (*ptr)[n][r];
+		}
+	}
 }
