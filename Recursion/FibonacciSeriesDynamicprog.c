@@ -19,7 +19,7 @@ p.s.:			 This code only works where "term <= 46". Beyond 46 will return a wrong 
 int fibon(int n, int* passinPtr);
 
 int main(){
-	int term = 46; //Looking for ther 10th term (shd = 55) of the Fibonacci Series.
+	int term = 47; //Looking for ther 10th term (shd = 55) of the Fibonacci Series.
 	int* ptr = malloc(term * sizeof(int));
 	for(int i = 0; i < term; i++) {
 		*(ptr+i) = 0;					
