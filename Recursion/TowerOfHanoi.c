@@ -1,6 +1,6 @@
 /*
 ===========================================================================================================================
-About_this_code: 	Recursive step to show the step of the Tower of Hanoi Problem.
+About_this_code: 	 Recursive step to show the step of the Tower of Hanoi Problem.
 Compiler: 		 GCC, GNU Compiler Collection, "gcc -o compilefile TowerOfHanoi.c"
 Author: 		 Cheung Tsz Yin
 Github:			 kevin909cty
