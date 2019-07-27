@@ -39,6 +39,11 @@ int append(arr passinArray, int value);
 int insert(arr passinArray, int valueAdd, int insertIndex);
 int delete(arr passinArray, int valueDelete, int deleteIndex);
 int linearSearch(arr passinArray, int key);
+void binarySet(arr passinArray);
+void binarySearch(arr passinArray, int key, int low, int high);
+void swap(arr passinArray, int index1, int index2);
+
+int binaryMid = 0;
 
 int main(){
 	arr newArray;
@@ -55,6 +60,9 @@ int main(){
 	linearSearch(newArray, 3);
 	displayArray(newArray);
 	linearSearch(newArray, 88);
+	binarySet(newArray);
+	displayArray(newArray);
+	binarySearch(newArray, 9, 0, 5);
 	return 0;
 }
 
@@ -98,13 +106,41 @@ int delete(arr passinArray, int valueDelete, int deleteIndex){
 }
 
 int linearSearch(arr passinArray, int key){
-	printf("\nLinear Search of value %d\n", key);
 	for(int i = 0; i < passinArray.length; i++){
 		if(key == passinArray.ptr[i]){
-			printf("The key of %d is at the index of %d\n\n", key, i);
 			return i;
 		}
 	}
-	printf("The key of %d is not in the array\n", key);
 	return -1;
+}
+
+void swap(arr passinArray, int index1, int index2){
+	int tmp = 0;
+	tmp = passinArray.ptr[index1];
+	passinArray.ptr[index1] = passinArray.ptr[index2];
+	passinArray.ptr[index2] = tmp;
+}
+
+void binarySet(arr passinArray){
+	for(int i = 0; i < passinArray.length; i++){
+		passinArray.ptr[i] = i + 5;
+	}
+}
+
+void binarySearch(arr passinArray, int key, int low, int high){
+	if(low >= high){
+		printf("Value is not found in the array\n");
+	}
+	else{
+		binaryMid = (low + high) / 2;
+		if(passinArray.ptr[binaryMid] == key){
+			printf("BinarySearch Result: Value of %d is at the index of %d\n", key, linearSearch(passinArray, key));
+		}
+		else if (binaryMid <= key){
+			return binarySearch(passinArray, key, low + 1, high);
+		}
+		else{
+			return binarySearch(passinArray, key, low, high - 1);
+		}
+	}
 }
