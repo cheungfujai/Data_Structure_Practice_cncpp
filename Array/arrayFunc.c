@@ -42,6 +42,11 @@ int linearSearch(arr passinArray, int key);
 void binarySet(arr passinArray);
 void binarySearch(arr passinArray, int key, int low, int high);
 void swap(arr passinArray, int index1, int index2);
+int findMax(arr passinArray);
+int findMin(arr passinArray);
+int findSum(arr arrayPassin);
+int sumRecursion(arr passinArray, int n);
+int average(arr passinArray);
 
 int binaryMid = 0;
 
@@ -63,6 +68,11 @@ int main(){
 	binarySet(newArray);
 	displayArray(newArray);
 	binarySearch(newArray, 9, 0, 5);
+	printf("\nMax value in the array  = %d\n", findMax(newArray));
+	printf("\nMin value in the array  = %d\n", findMin(newArray));
+	printf("\nSum  = %d\n", findSum(newArray));
+	printf("\nSum(Recursion)  = %d\n", sumRecursion(newArray, newArray.length - 1));
+	printf("\nAverage  = %d\n", average(newArray));
 	return 0;
 }
 
@@ -143,4 +153,46 @@ void binarySearch(arr passinArray, int key, int low, int high){
 			return binarySearch(passinArray, key, low, high - 1);
 		}
 	}
+}
+
+int findMax(arr passinArray){
+	int max = 0;
+	for (int i = 0; i < passinArray.length; i++){
+		if (passinArray.ptr[i] >= max){
+			max = passinArray.ptr[i];
+		}
+	}
+	return max;
+}
+
+int findMin(arr passinArray){
+	int min = 99;
+	for(int i = 0; i < passinArray.length; i++){
+		if (passinArray.ptr[i] <= min){
+			min = passinArray.ptr[i];
+		}
+	}
+	return min;
+}
+
+int findSum(arr passinArray){
+	int sum = 0;
+	for(int i = 0; i < passinArray.length; i++){
+		sum = sum + passinArray.ptr[i];
+	}
+	return sum;
+}
+
+int sumRecursion(arr passinArray, int n){
+	if(n < 0){
+		return 0;
+	}
+	else{
+		return sumRecursion(passinArray, n - 1) + passinArray.ptr[n];
+	}
+}
+
+int average(arr passinArray){
+	int avg = findSum(passinArray) / (passinArray.length);
+	return avg;
 }
