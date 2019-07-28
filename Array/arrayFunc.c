@@ -47,6 +47,7 @@ int findMin(arr passinArray);
 int findSum(arr arrayPassin);
 int sumRecursion(arr passinArray, int n);
 int average(arr passinArray);
+void reverse(arr passinArray);
 
 int binaryMid = 0;
 
@@ -72,7 +73,9 @@ int main(){
 	printf("\nMin value in the array  = %d\n", findMin(newArray));
 	printf("\nSum  = %d\n", findSum(newArray));
 	printf("\nSum(Recursion)  = %d\n", sumRecursion(newArray, newArray.length - 1));
-	printf("\nAverage  = %d\n", average(newArray));
+	printf("\nAverage = %d\n\n", average(newArray));
+	reverse(newArray);
+	displayArray(newArray);
 	return 0;
 }
 
@@ -89,7 +92,7 @@ void displayArray(arr passinArray){
 	for(int i = 0; i < passinArray.length; i++){
 		printf("passinArray[%d] = %d \n", i, passinArray.ptr[i]);
 	}
-	printf("Array Length:  = %d\n", passinArray.length);
+	printf("\nArray Length:  = %d\n\n", passinArray.length);
 }
 
 int append(arr passinArray, int value){
@@ -195,4 +198,10 @@ int sumRecursion(arr passinArray, int n){
 int average(arr passinArray){
 	int avg = findSum(passinArray) / (passinArray.length);
 	return avg;
+}
+
+void reverse(arr passinArray){
+	for(int i = 0, j = passinArray.length - 1; i < j; i++, j--){
+		swap(passinArray, i, j);
+	}
 }
