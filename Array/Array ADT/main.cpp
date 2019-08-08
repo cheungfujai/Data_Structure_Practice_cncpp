@@ -33,4 +33,5 @@ int main(){
 	newArray.reverse();
 	newArray.display();
 	cout << "Is the array sort?  ->  " << std::boolalpha << newArray.checkSort() << "\n" << std::endl; 
+	
 }

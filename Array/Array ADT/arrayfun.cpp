@@ -141,7 +141,12 @@ bool Array::checkSort(){
 	return true;
 }
 
-/*
+int Array::missing(){
+	int s = (ptr[0] + ptr[size - 1]);
+	return missing
+}
+
+/* 
 void Array::merge(Array::passinNewArray, Array passinMergeArray){
 	
 }
