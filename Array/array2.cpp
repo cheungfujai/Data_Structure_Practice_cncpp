@@ -36,6 +36,7 @@ public:
 	void duplicating();
 	int findMax();
 	void check8();
+	void MinMaxCheckInOneLoop();
 };
 
 void Array::missing(){
@@ -96,7 +97,31 @@ void Array::check8(){
 	}
 }
 
+void Array::MinMaxCheckInOneLoop(){
+	int min = 0, max = 0;
+	for(int i = 0; i < size; i++){
+		if(i == 0){
+			min = ptr[i];
+		}
+		else if(i == 1){
+			max = ptr[i];
+		}
+		else{
+			if(ptr[i] < min){
+				min = ptr[i];
+			}
+			else if (ptr[i] > max){
+				max = ptr[i];
+			}
+			else{
+
+			}
+		}			
+	}
+	printf("Max = %d, Min = %d, where both Max and Min checked in the time complexity of O(n)\n", max, min);
+}
+
 int main(){
 	Array newArray;
-	newArray.check8();
+	newArray.MinMaxCheckInOneLoop();
 }
