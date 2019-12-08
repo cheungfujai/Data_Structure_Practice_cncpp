@@ -13,7 +13,7 @@ int main(){
     scanf("%d", &listSize);
     int* arrayList = (int*)malloc(listSize*sizeof(int));
         /* if use calloc() -> int* arrayList = (int*)calloc(listSize, sizeof(int)); */
-    for(int i = 0; i < listSize; i++) arrayList[i] = i;
+    for(int i = 0; i < listSize; i++) arrayList[i] = i+5;
     ListNode* first = createList(arrayList, listSize);
 
     // Display Linked List
