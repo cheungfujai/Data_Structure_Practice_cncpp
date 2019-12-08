@@ -17,7 +17,8 @@ struct ListNode{
 
 ListNode* createList(int* arr, int size);
 void displayList(ListNode *ptr);
+void push_front(ListNode *ptr, int valAdd);
 int size(ListNode *ptr);
+int value_at(ListNode *ptr, int index);
 bool empty(ListNode *ptr);
-
 #endif
