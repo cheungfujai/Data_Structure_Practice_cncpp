@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h> 
+#include <stdbool.h>
 #include "linkedlist.h"
 
 ListNode* createList(int* arr, int size){
@@ -37,4 +38,14 @@ int size(ListNode *ptr){
         counter++;
     }
     return counter;
+}
+
+bool empty(ListNode *ptr){
+    ListNode *temp = ptr;
+    if(!temp){
+        return true;
+    }
+    else{ // Not empty
+        return false;
+    }
 }

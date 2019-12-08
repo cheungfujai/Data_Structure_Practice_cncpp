@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h> 
+#include <stdbool.h>
 #include "linkedlist.c"
 #include "linkedlist.h"
 
@@ -18,8 +19,11 @@ int main(){
     // Display Linked List
     displayList(first);
 
-    // Display Linked List Size;
+    // Display Linked List Size
     printf("Return size after function call = %d\n", size(first));
+
+    // Check if the Linked List is Empty
+    printf("Is the Linked List empty?  -> %s\n", empty(first)? "true":"false");
 
     free(arrayList);
     return 0;

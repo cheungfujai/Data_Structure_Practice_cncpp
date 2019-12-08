@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
@@ -17,5 +18,6 @@ struct ListNode{
 ListNode* createList(int* arr, int size);
 void displayList(ListNode *ptr);
 int size(ListNode *ptr);
+bool empty(ListNode *ptr);
 
 #endif
