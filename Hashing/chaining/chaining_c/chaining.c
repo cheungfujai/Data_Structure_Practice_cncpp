@@ -10,28 +10,31 @@ int hashFunction_1(int key){
 }
 
 void insert(ListNode* ptr, int key){
-    
+
 }
 
-void hashsortInsert(ListNode** head, int val){
+void hashsortInsert(ListNode** head, int val, int key){
     ListNode* newNode = (ListNode*)malloc(sizeof(ListNode));
     newNode->val = val;
     newNode->next = NULL;
-
-    if(!*head){
-        *head = newNode;
+    printf("Debug head[%d] = %p\n", key, head[key]->val);
+    if(head[key]->next){
+        printf("Debug\n");
+        head[key] = newNode;
     }
     else{
-        ListNode* curr = *head, *prev = NULL;
-        while(curr){
-            if(curr->val < newNode->val){
-                prev = curr;
-                curr = curr->next;   
+        ListNode* curr = head[key], *prev = NULL;
+        while(head[key]){
+            if(head[key]->val < newNode->val){
+                prev = head[key];
+                head[key] = head[key]->next;   
             }
             else{
                 prev->next = newNode;
-                newNode->next = curr;
+                newNode->next = head[key];
+                break;
             }
         }
     }
+    printf("Stored in head = %d, address of new Node = %d", head[key]->val, newNode->val);
 }

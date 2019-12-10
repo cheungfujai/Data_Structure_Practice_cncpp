@@ -23,6 +23,9 @@ int main(){
 
     // Create hash table......
     ListNode** hashTable = (ListNode**)malloc(htSize*sizeof(ListNode*));
-    
+    for(int i = 0; i < htSize; i++){
+        hashsortInsert(hashTable, hashArray[i], hashFunction_1(hashArray[i]));
+    }
+    printf("Done\n");
     return 0;
 }

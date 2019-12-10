@@ -28,6 +28,6 @@ struct ListNode{
 int hashFunction_1(int key);
 void insert(ListNode* ptr, int key);
 
-void hashsortInsert(ListNode** head, int val);
+void hashsortInsert(ListNode** head, int val, int key);
 
 #endif
