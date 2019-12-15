@@ -24,8 +24,13 @@ int main(){
     // Create hash table......
     ListNode** hashTable = (ListNode**)malloc(htSize*sizeof(ListNode*));
     for(int i = 0; i < htSize; i++){
-        hashsortInsert(hashTable, hashArray[i], hashFunction_1(hashArray[i]));
+        hashsortInsert(hashTable, hashArray[i]);
     }
-    printf("Done\n");
+    printf("Done inserting array value to hash table ! \n\n");
+
+    // search if value exists in the hash table
+    searchHash(hashTable[hashFunction_1(hashArray[2])], hashArray[2]);
+    //searchHash(hashTable, 8);
+
     return 0;
 }

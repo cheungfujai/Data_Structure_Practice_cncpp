@@ -12,13 +12,6 @@ Contact email: 	 	 cheungkevinviola909@gmail.com
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
-/*
-struct ListNode{
-    int val;
-    struct ListNode* next;
-};
-*/
-
 typedef struct ListNode ListNode;
 struct ListNode{
     int val;
@@ -26,8 +19,7 @@ struct ListNode{
 };
 
 int hashFunction_1(int key);
-void insert(ListNode* ptr, int key);
-
-void hashsortInsert(ListNode** head, int val, int key);
+void hashsortInsert(ListNode **table, int val);
+void searchHash(ListNode *table, int valFind);
 
 #endif

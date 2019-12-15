@@ -3,38 +3,54 @@
 #include <stdbool.h>
 #include "chaining.h"
 
-
-
 int hashFunction_1(int key){
     return key%10;
 }
 
-void insert(ListNode* ptr, int key){
+void hashsortInsert(ListNode **table, int val){
+    int keyIndex = hashFunction_1(val);
 
-}
-
-void hashsortInsert(ListNode** head, int val, int key){
-    ListNode* newNode = (ListNode*)malloc(sizeof(ListNode));
+    ListNode *newNode, *prev = NULL;
+    
+    ListNode *temp = *table;
+    newNode = (ListNode*)malloc(sizeof(ListNode));
     newNode->val = val;
     newNode->next = NULL;
-    printf("Debug head[%d] = %p\n", key, head[key]->val);
-    if(head[key]->next){
-        printf("Debug\n");
-        head[key] = newNode;
+
+    if(table[keyIndex] == NULL){
+        *table = newNode;
     }
     else{
-        ListNode* curr = head[key], *prev = NULL;
-        while(head[key]){
-            if(head[key]->val < newNode->val){
-                prev = head[key];
-                head[key] = head[key]->next;   
-            }
-            else{
-                prev->next = newNode;
-                newNode->next = head[key];
-                break;
-            }
+        while(temp && temp->val < val){
+            prev = temp;
+            temp = temp->next;
+        }
+        //prev->next = newNode;
+        //newNode->next = temp;
+        if(temp == *table){
+            newNode->next = *table;
+            *table = newNode;
+        }
+        else{
+            newNode->next = prev->next;
+            prev->next = newNode;
         }
     }
-    printf("Stored in head = %d, address of new Node = %d", head[key]->val, newNode->val);
+}
+
+void searchHash(ListNode *table, int valFind){
+    int counter = 0;
+    ListNode *temp = table;
+    while(table!=NULL){
+        if(table->val == valFind){
+            printf("testing ! \n");
+            printf("Value of %d is found in the hashTable!\n", valFind);
+            counter++;
+            break;
+        }
+        table = table->next;
+    }
+    if(counter == 0){
+        printf("Value of %d is not found in the Hash Table!\n", valFind);
+    }
 }
