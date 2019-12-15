@@ -18,7 +18,7 @@ void hashsortInsert(ListNode **table, int val){
     newNode->next = NULL;
 
     if(table[keyIndex] == NULL){
-        *table = newNode;
+        *table = prev;
     }
     else{
         while(temp && temp->val < val){
@@ -27,6 +27,7 @@ void hashsortInsert(ListNode **table, int val){
         }
         //prev->next = newNode;
         //newNode->next = temp;
+
         if(temp == *table){
             newNode->next = *table;
             *table = newNode;
