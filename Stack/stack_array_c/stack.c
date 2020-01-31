@@ -43,7 +43,7 @@ void freeStack(Stack* ptr){
 
 void pop(Stack* ptr){
     if(ptr->top == -1){
-        printf("Hey dude, Stack Underflow.");
+        printf("Hey dude, Stack Underflow.\n");
     }
     else{
         int showData = ptr->stackVal[ptr->top];
