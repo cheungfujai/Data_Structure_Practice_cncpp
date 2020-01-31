@@ -1,0 +1,18 @@
+C++ template class revision:
+
+ - generic class
+	-> because in a class 
+		-> data and operation are the same 
+		-> but data type is not the same (E.g. int and float)
+	Therefore:
+		-> The current variables and functions inside the class
+		   will no longer work
+			(Not like javascript -> C++ is strong type language)
+	 	-> [ !!! ] There will be a lot of copy, paste and a little edit of code
+		   of work to do
+			=> if we only create an other data type class but with
+			   same variable and function. 
+		-> No!!!
+		-> C++ provide the same class but with multiple data types
+
+!!!!!!!!!!!!!!!!   => [ template class ]  !!!!!!!!!!!!!!!! -> generic class
