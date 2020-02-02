@@ -1,12 +1,14 @@
 #ifndef STACK_H_
 #define STACK_H_
 
-class Top;
+using namespace std;
+
+class Stack;
 class Block{
 private:
     int val;
     Block* next;
-friend Top;
+friend Stack;
 };
 
 class Stack{
