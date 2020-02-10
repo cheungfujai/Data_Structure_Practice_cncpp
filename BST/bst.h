@@ -10,8 +10,10 @@ struct Node{
 
 Node* insert(Node* root, int data);
 bool search(Node* root, int data);
-int countNode(Node* ptr);
+int countNode(Node* ptr, int count);
 void getMin(Node* ptr);
 void getMax(Node* ptr);
+
+int getHeight(Node* ptr);
 
 #endif

@@ -21,7 +21,14 @@ int main(){
     getMin(root);
     getMax(root);
 
-    countNode(root);
+    /*
+    int count = 0;
+    count = countNode(root, count);
+    */
+
+    int height = getHeight(root);
+    printf("heigher of the tree = %d\n", height);
+    
 
     return 0;
 

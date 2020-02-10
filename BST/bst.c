@@ -61,22 +61,29 @@ void getMax(Node* ptr){
     }
 }
 
-int countNode(Node* ptr){
+int countNode(Node* ptr, int count){
     Node* root = ptr;
     if(!root){
-        printf("Number of Node in BT = 0\n");
+        return count;
     }
     else{
         while(root){
-            if(root->left && root->right){
-                return 
-            }
-            else if(root->left && !root->right){
+        }
+    }
+}
 
-            }
-            else{
-                
-            }
+int getHeight(Node* ptr){
+    if(!ptr){
+        return -1;
+    }
+    else{
+        int leftNum = getHeight(ptr->left);
+        int rightNum = getHeight(ptr->right);
+        if(leftNum > rightNum){
+            return leftNum+1;
+        }
+        else{
+            return rightNum+1;
         }
     }
 }
